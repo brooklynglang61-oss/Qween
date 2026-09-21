@@ -305,29 +305,29 @@ local function CreateBox(parent, text, default, callback, yPos)
     end)
 end
 
--- Pages Content
-CreateToggle(Pages.Aimbot, "Enable Aimbot", false, function(v) Settings.AimbotEnabled = v end, 4)
-CreateToggle(Pages.Aimbot, "Team Check", true, function(v) Settings.AimbotTeamCheck = v end, 38)
-CreateToggle(Pages.Aimbot, "Visible Check", true, function(v) Settings.AimbotVisibleCheck = v end, 72)
+-- Pages Content (Aimbot & Silent centered for mobile)
+CreateToggle(Pages.Aimbot, "Enable Aimbot", false, function(v) Settings.AimbotEnabled = v end, 70)
+CreateToggle(Pages.Aimbot, "Team Check", true, function(v) Settings.AimbotTeamCheck = v end, 110)
+CreateToggle(Pages.Aimbot, "Visible Check", true, function(v) Settings.AimbotVisibleCheck = v end, 150)
 CreateBox(Pages.Aimbot, "FOV", 140, function(v)
     local n = tonumber(v)
     if n then Settings.AimbotFOV = math.clamp(n, 20, 500) end
-end, 108)
+end, 190)
 CreateBox(Pages.Aimbot, "Smoothness (0.01-1)", 0.15, function(v)
     local n = tonumber(v)
     if n then Settings.AimbotSmooth = math.clamp(n, 0.01, 1) end
-end, 162)
+end, 250)
 
-CreateToggle(Pages.Silent, "Enable Silent Aim", false, function(v) Settings.SilentEnabled = v end, 4)
-CreateToggle(Pages.Silent, "Team Check", true, function(v) Settings.SilentTeamCheck = v end, 38)
+CreateToggle(Pages.Silent, "Enable Silent Aim", false, function(v) Settings.SilentEnabled = v end, 70)
+CreateToggle(Pages.Silent, "Team Check", true, function(v) Settings.SilentTeamCheck = v end, 110)
 CreateBox(Pages.Silent, "FOV", 180, function(v)
     local n = tonumber(v)
     if n then Settings.SilentFOV = math.clamp(n, 20, 600) end
-end, 74)
+end, 150)
 CreateBox(Pages.Silent, "Hit Chance %", 100, function(v)
     local n = tonumber(v)
     if n then Settings.SilentHitChance = math.clamp(n, 1, 100) end
-end, 128)
+end, 210)
 
 CreateToggle(Pages.ESP, "Enable ESP", false, function(v) Settings.ESPEnabled = v end, 4)
 CreateToggle(Pages.ESP, "Box", true, function(v) Settings.ESPBox = v end, 38)
